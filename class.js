@@ -1,4 +1,4 @@
- class Grass {
+class Grass {
     constructor(x, y, index) {
         this.x = x
         this.y = y
@@ -38,8 +38,8 @@
             matrix[norVandak[1]][norVandak[0]] = 1;
             this.multiply = 0;
         }
-     }    
-  }
+    }
+}
 class Xotaker {
     constructor(x, y) {
         this.x = x;
@@ -76,7 +76,7 @@ class Xotaker {
             [this.x + 1, this.y + 1]
         ];
     }
-   sharjvel() {
+    sharjvel() {
         this.stanalNorKordinatner();
         var datarkvandakner = this.yntrelVandak(0);
         var norVandak = random(datarkvandakner);
@@ -108,18 +108,18 @@ class Xotaker {
     }
     bazmanal() {
         var norVandak = random(this.yntrelVandak(0));
-         console.log(norVandak, this.multiply);
+        console.log(norVandak, this.multiply);
         console.log(this.energy);
         if (norVandak && this.energy >= 5) {
             this.energy = 2;
             var norXotaker = new Xotaker(norVandak[0], norVandak[1]);
             xotaker.push(norXotaker);
             matrix[norVandak[1]][norVandak[0]] = 1;
-             this.multiply = 0;  
+            this.multiply = 0;
         }
-    }    
+    }
 }
-class  Gishatich {
+class Gishatich {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -148,7 +148,7 @@ class  Gishatich {
                 }
             }
         }
-       return  found;
+        return found;
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -172,7 +172,7 @@ class  Gishatich {
             this.x = norVandak[0];
             this.y = norVandak[1];
         }
-    }  
+    }
     utel() {
         this.stanalNorKordinatner();
         var datarkvandakner = this.yntrelVandak(2);
@@ -182,23 +182,23 @@ class  Gishatich {
             matrix[norVandak[1]][norVandak[0]] = 3;
             this.x = norVandak[0];
             this.y = norVandak[1];
-            this.energy++;       
-           }
+            this.energy++;
         }
-         bazmanal() {
+    }
+    bazmanal() {
         var norVandak = random(this.yntrelVandak(0));
-         console.log(norVandak, this.multiply);
+        console.log(norVandak, this.multiply);
         console.log(this.energy);
         if (norVandak && this.energy >= 5) {
             this.energy = 2;
             var norGishatich = new Gishatich(norVandak[0], norVandak[1]);
             gishatich.push(norGishatich);
             matrix[norVandak[1]][norVandak[0]] = 1;
-             this.multiply = 0;  
-            }
-         }
-      }
-   class  Hresh {
+            this.multiply = 0;
+        }
+    }
+}
+class Hresh {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -226,7 +226,7 @@ class  Gishatich {
                 }
             }
         }
-       return  found;
+        return found;
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -260,23 +260,23 @@ class  Gishatich {
             matrix[norVandak[1]][norVandak[0]] = 4;
             this.x = norVandak[0];
             this.y = norVandak[1];
-            this.energy++;       
-           }
+            this.energy++;
         }
-           bazmanal() {
+    }
+    bazmanal() {
         var norVandak = random(this.yntrelVandak(0));
-         console.log(norVandak, this.multiply);
+        console.log(norVandak, this.multiply);
         console.log(this.energy);
         if (norVandak && this.energy >= 5) {
             this.energy = 2;
             var norHresh = new Hresh(norVandak[0], norVandak[1]);
             hresh.push(norHresh);
             matrix[norVandak[1]][norVandak[0]] = 4;
-             this.multiply = 0;  
+            this.multiply = 0;
         }
-      }
-   }
-    class  Hreshaker {
+    }
+}
+class Hreshaker {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -300,11 +300,11 @@ class  Gishatich {
             var y = this.directions[i][1];
             if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
                 if (matrix[y][x] == hresh) {
-                 found.push(this.directions[i]);
+                    found.push(this.directions[i]);
                 }
             }
         }
-       return  found;
+        return found;
     }
     stanalNorKordinatner() {
         this.directions = [
@@ -339,21 +339,21 @@ class  Gishatich {
             matrix[norVandak[1]][norVandak[0]] = 5;
             this.x = norVandak[0];
             this.y = norVandak[1];
-            this.energy++;       
-           }
+            this.energy++;
         }
-           bazmanal() {
+    }
+    bazmanal() {
         var norVandak = random(this.yntrelVandak(0));
-         console.log(norVandak, this.multiply);
+        console.log(norVandak, this.multiply);
         console.log(this.energy);
         if (norVandak && this.energy >= 5) {
             this.energy = 2;
             var norHreshaker = new Hreshaker(norVandak[0], norVandak[1]);
             hreshaker.push(norHreshaker);
             matrix[norVandak[1]][norVandak[0]] = 5;
-             this.multiply = 0;  
+            this.multiply = 0;
         }
-      }
-   }
-    
+    }
+}
+
 

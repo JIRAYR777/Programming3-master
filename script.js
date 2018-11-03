@@ -1,11 +1,11 @@
- var matrix = [
-[3, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 5],
-[1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0],
-[0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1],
-[0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1],
-[1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0],
-[1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0],
-[4, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2]
+var matrix = [
+    [3, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 5],
+    [1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0],
+    [0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1],
+    [0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1],
+    [1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0],
+    [1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0],
+    [4, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2]
 ];
 
 var grassArr = []
@@ -30,10 +30,10 @@ function setup() {
                 gishatich.push(new Gishatich(x, y, 3))
             }
             else if (matrix[y][x] == 4) {
-             hresh.push(new Hresh(x ,y , 4))
+                hresh.push(new Hresh(x, y, 4))
             }
             else if (matrix[y][x] == 5) {
-             hreshaker.push(new Hreshaker(x, y, 5))
+                hreshaker.push(new Hreshaker(x, y, 5))
             }
         }
     }
@@ -63,48 +63,47 @@ function draw() {
                 fill(254, 1, 47);
                 rect(x * side, y * side, side, side);
             }
-           
-           else if (matrix[y][x] == 5) {
+
+            else if (matrix[y][x] == 5) {
                 fill(254, 177, 1);
                 rect(x * side, y * side, side, side);
             }
-          
-            
+
+
         }
     }
 
     for (var i in grassArr) {
-        
+
         grassArr[i].bazmanal();
     }
 
 
     for (var i in xotaker) {
-       xotaker[i].sharjvel();
-       xotaker[i].utel();
-       xotaker[i].bazmanal();
-      
+        xotaker[i].sharjvel();
+        xotaker[i].utel();
+        xotaker[i].bazmanal();
+
     }
     for (var i in gishatich) {
-       gishatich[i].sharjvel();
-       gishatich[i].utel();
-       gishatich[i].bazmanal();
-    
-   }
-   for (var i in hresh) {
-       hresh[i].sharjvel();
-       hresh[i].utel();
-       hresh[i].bazmanal();
-    
-   }
-     
-     for (var i in hreshaker) {
-       hreshaker[i].sharjvel();
-       hreshaker[i].utel();
-       hreshaker[i].bazmanal();
+        gishatich[i].sharjvel();
+        gishatich[i].utel();
+        gishatich[i].bazmanal();
 
-   }
-   
+    }
+    for (var i in hresh) {
+        hresh[i].sharjvel();
+        hresh[i].utel();
+        hresh[i].bazmanal();
+
+    }
+
+    for (var i in hreshaker) {
+        hreshaker[i].sharjvel();
+        hreshaker[i].utel();
+        hreshaker[i].bazmanal();
+
+    }
+
 }
- 
- 
+
