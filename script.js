@@ -44,8 +44,7 @@ function setup() {
                 amenakernerArr.push(amenaker);
             } else if (matrix[y][x] == 5) {
                 hresh = new Hresh(x, y, 5);
-                hreshArr.push(hresh
-                );
+                hreshArr.push(hresh);
             }
         }
     }
@@ -53,6 +52,8 @@ function setup() {
 
 var multiplyMah = 0;
 var multiplyExanak = 0;
+
+
 
 function draw() {
     multiplyMah++;
@@ -136,12 +137,12 @@ function draw() {
                 fill('#acacac');
                 rect(x * side, y * side, side, side);
             } else if (matrix[y][x] == 2) {
-                for(var i in xotakernerArr){
+                for (var i in xotakernerArr) {
                     if (x == xotakernerArr[i].x && y == xotakernerArr[i].y) {
                         if (xotakernerArr[i].ser == 1) {
                             fill('#DFDC00');
                             rect(side * x, side * y, side, side);
-                        }else{
+                        } else {
                             fill('yellow');
                             rect(side * x, side * y, side, side);
                         }
@@ -149,12 +150,12 @@ function draw() {
                     }
                 }
             } else if (matrix[y][x] == 3) {
-                for(var i in gishatichnerArr){
+                for (var i in gishatichnerArr) {
                     if (x == gishatichnerArr[i].x && y == gishatichnerArr[i].y) {
                         if (gishatichnerArr[i].ser == 1) {
                             fill('red');
                             rect(side * x, side * y, side, side);
-                        }else{
+                        } else {
                             fill('#FF5656');
                             rect(side * x, side * y, side, side);
                         }
@@ -162,12 +163,12 @@ function draw() {
                     }
                 }
             } else if (matrix[y][x] == 4) {
-                for(var i in amenakernerArr){
+                for (var i in amenakernerArr) {
                     if (x == amenakernerArr[i].x && y == amenakernerArr[i].y) {
                         if (amenakernerArr[i].ser == 1) {
                             fill('#673700');
                             rect(side * x, side * y, side, side);
-                        }else{
+                        } else {
                             fill('brown');
                             rect(side * x, side * y, side, side);
                         }
@@ -178,12 +179,12 @@ function draw() {
                 fill('black');
                 rect(side * x, side * y, side, side);
             } else if (matrix[y][x] == 5) {
-                for(var i in hreshArr){
+                for (var i in hreshArr) {
                     if (x == hreshArr[i].x && y == hreshArr[i].y) {
                         if (hreshArr[i].ser == 1) {
                             fill('purple');
                             rect(side * x, side * y, side, side);
-                        }else{
+                        } else {
                             fill('#B600FF');
                             rect(side * x, side * y, side, side);
                         }
@@ -204,7 +205,7 @@ function draw() {
         xotakernerArr[i].stanalExanak(exanak);
         xotakernerArr[i].utel();
         if (exanak != 'winter') {
-          xotakernerArr[i].bazmanal();   
+            xotakernerArr[i].bazmanal();
         }
         xotakernerArr[i].mahanal();
     }
@@ -235,7 +236,7 @@ function draw() {
 
     var socket = io.connect('http://localhost:3000');
 
-    if(frameCount % 60 == 0){
+    if (frameCount % 60 == 0) {
         var info = {
             "GishatichneriKoghmicSpanvacXotakerneriTokosy": Math.floor((GishKoghmicSpanvacXotaker * 100) / spanvacXotaker),
             "AmenakerneriKoghmicSpanvacGishatichneriTokosy": Math.floor((amenakerSpanvacGish * 100) / spanvacGishatichner),
@@ -248,26 +249,29 @@ function draw() {
         }
         handleSubmit();
     }
+    //console.log(info);
+    alert(info);
 
-    if(xotakernerArr.length == 0 && gishatichnerArr == 0 && amenakernerArr == 0){
+
+    if (xotakernerArr.length == 0 && gishatichnerArr == 0 && amenakernerArr == 0) {
         background('#acacac');
         createCanvas(matrix[0].length * side, matrix.length * side);
         fill('black');
         textSize(32);
         text('Game Over: Hresh Win', 10, 30);
-    } else if (xotakernerArr.length == 0 && gishatichnerArr == 0 && hreshArr == 0){
+    } else if (xotakernerArr.length == 0 && gishatichnerArr == 0 && hreshArr == 0) {
         background('#acacac');
         createCanvas(matrix[0].length * side, matrix.length * side);
         fill('black');
         textSize(32);
         text('Game Over: Amenaker Win', 10, 30);
-    } else if (amenakernerArr.length == 0 && gishatichnerArr == 0 && hreshArr == 0){
+    } else if (amenakernerArr.length == 0 && gishatichnerArr == 0 && hreshArr == 0) {
         background('#acacac');
         createCanvas(matrix[0].length * side, matrix.length * side);
         fill('black');
         textSize(32);
         text('Game Over: Xotaker Win', 10, 30);
-    } else if (xotakernerArr.length == 0 && amenakernerArr == 0 && hreshArr == 0){
+    } else if (xotakernerArr.length == 0 && amenakernerArr == 0 && hreshArr == 0) {
         background('#acacac');
         createCanvas(matrix[0].length * side, matrix.length * side);
         fill('black');

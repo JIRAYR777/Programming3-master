@@ -1,0 +1,25 @@
+{
+  "name": "programming3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gishatich.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narine999/Programming3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Narine999/Programming3/issues"
+  },
+  "homepage": "https://github.com/Narine999/Programming3#readme"
+}
